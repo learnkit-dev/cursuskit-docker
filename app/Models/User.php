@@ -11,8 +11,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use LearnKit\Lms\Concerns\HasLmsAccess;
+use LearnKit\Lms\Models\Contracts\LmsUser;
 
-class User extends Authenticatable implements FilamentUser, HasTenants, HasDefaultTenant
+class User extends Authenticatable implements FilamentUser, HasTenants, HasDefaultTenant, LmsUser
 {
     use HasApiTokens, HasFactory, Notifiable, HasLmsAccess;
 
